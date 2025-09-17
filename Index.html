@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCORE</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    crossorigin="anonymous">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+</head>
+
+<body>
+  <header data-aos="fade-down">
+    <div class="logo"><img src="img/logo.png" alt="Logo SESI Score"></div>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="mostrar('#inicio')" class="active">Início</a></li>
+        <li><a href="#" onclick="mostrar('#sobre')">Sobre</a></li>
+        <li><a href="#" onclick="mostrar('#funcionalidade')">Funcionalidade</a></li>
+        <li><a href="#" onclick="mostrar('#suporte')">Suporte</a></li>
+        <li><a href="#" onclick="mostrar('#download')">Download</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h1>SCORE</h1>
+      <p>Veja as estatísticas do seu interclasse!</p>
+      <a href="#" class="btn" onclick="mostrar('#download')">Baixar Agora</a>
+    </div>
+  </section>
+
+  <section id="sobre" class="page">
+    <div class="text">
+      <h2>SOBRE</h2>
+      <p>O SCORE é um aplicativo desenvolvido especialmente para acompanhar de perto todas as estatísticas do
+        Interclasse 2025. Nele, você pode registrar e visualizar dados detalhados das partidas, como gols, assistências,
+        cartões, melhores jogadores e muito mais.
+
+        Nosso objetivo é tornar a experiência do interclasse ainda mais emocionante, oferecendo uma plataforma prática e
+        moderna para que todos — jogadores, professores e torcedores — possam acompanhar o desempenho dos times em tempo
+        real.
+
+        Com o SCORE, cada lance conta e cada estatística faz diferença.</p>
+      <div class="footer">
+        <h4>SCORE</h4><span>INTERCLASSE 2025</span>
+      </div>
+    </div>
+    <div class="image"><img src="img/jamorant.png" alt="Jogador Sobre"></div>
+  </section>
+
+  <section id="funcionalidade" class="page">
+    <div class="text">
+      <h2>FUNCIONALIDADE</h2>
+      <p>FUNCIONALIDADE
+
+        O SCORE foi desenvolvido para simplificar o acompanhamento das partidas do Interclasse 2025.
+        Com ele, você pode:
+
+        Registrar estatísticas em tempo real: gols, assistências, cartões e muito mais.
+
+        Destaques automáticos: identifique os melhores jogadores de cada jogo.
+
+        Acesso em qualquer lugar: acompanhe pelo celular, tablet ou computador.
+
+        Conexão entre todos: jogadores, professores e torcedores integrados em uma só plataforma.
+
+        Nosso foco é oferecer uma experiência completa, moderna e fácil de usar, transformando cada partida em um
+        espetáculo ainda mais envolvente.</p>
+      <div class="footer">
+        <h4>SCORE</h4><span>INTERCLASSE 2025</span>
+      </div>
+    </div>
+    <div class="image"><img src="img/cr7.png" alt="Jogador Funcionalidade"></div>
+  </section>
+
+  <section id="suporte" class="page">
+    <div class="text">
+      <h2>SUPORTE</h2>
+      <p>Em caso de dúvidas, sugestões ou problemas, entre em contato com nossa equipe de suporte.<br>
+        Envie um e-mail para: <b>suportescoreinterclasses@gmail.com</b></p>
+      <div class="footer">
+        <h4>SCORE</h4><span>INTERCLASSE 2025</span>
+      </div>
+    </div>
+    <div class="image"><img src="img/lebron.png" alt="Jogador Suporte"></div>
+  </section>
+
+  <!-- DOWNLOAD estilizado -->
+  <section id="download" class="download-section">
+    <div class="download-content">
+      <h1>SCORE</h1>
+      <p>Baixe agora o nosso aplicativo!</p>
+      <a href="#" class="btn">BAIXAR AGORA</a>
+    </div>
+  </section>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+    function mostrar(secao) {
+      document.querySelectorAll("section").forEach(s => {
+        s.style.display = "none";
+        s.classList.remove("animated-slide-up");
+      });
+      const target = document.querySelector(secao);
+      target.style.display = "flex";
+      void target.offsetWidth;
+      target.classList.add("animated-slide-up");
+      document.querySelectorAll("nav ul li a").forEach(a => a.classList.remove("active"));
+      document.querySelector(`nav ul li a[onclick="mostrar('${secao}')"]`).classList.add("active");
+    }
+    document.addEventListener("DOMContentLoaded", () => mostrar("#inicio"));
+  </script>
+</body>
+
+</html>
